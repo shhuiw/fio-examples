@@ -1,0 +1,16 @@
+# https://github.com/axboe/fio/blob/master/examples/fsx.fio
+#
+# This job file works pretty works similarly to run ltp/fsx-linux
+# with -r 4096 -w 4096 -Z -N 500
+[file]
+ioengine=libaio
+iodepth=1
+rw=randrw
+size=256k
+bs=4k
+norandommap
+direct=1
+loops=500
+#commit 15ca150e8 deprecated option 'rwmixcycle'
+#rwmixcycle=40
+rwmixwrite=50

@@ -1,0 +1,26 @@
+# https://github.com/axboe/fio/blob/master/examples/tiobench-example.fio
+#
+# tiobench like setup, add more fX files between the stonewalls to
+# create more threads
+
+[global]
+direct=1
+size=128m
+bsrange=4k-4k
+timeout=60
+numjobs=4	; 4 simultaneous threads for each job
+
+[f1]
+rw=write
+
+[f2]
+stonewall
+rw=randwrite
+
+[f3]
+stonewall
+rw=read
+
+[f4]
+stonewall
+rw=randread

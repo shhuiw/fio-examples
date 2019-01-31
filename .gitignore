@@ -1,0 +1,5 @@
+*.pyc
+*.state
+testcases/*.state
+*.log
+testcases/*.log
